@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  width: 220px;
+  margin: 0;
+  border-radius: 16px;
+  padding: 12px;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0;
+}
+
+#button-container {
+  display: flex;
+  gap: 12px
+}
+
+button {
+  width: 70px;
+  height: 32px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 12px 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  cursor: pointer;
+  transition: background-color .2s;
+}
+
+#yes-button {
+  background-color: #caf1d8;
+  border-color: #22c55e;
+  color: #136c34;
+}
+#yes-button:hover {
+  background-color: #a0e6ba;
+}
+
+#no-button {
+  background-color: #ffd0ce;
+  border-color: #ff3d32;
+  color: #8c221c;
+}
+#no-button:hover {
+  background-color: #ffaca7;
+}
