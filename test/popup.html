@@ -7,11 +7,61 @@
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h1>¿Quieres extraer los datos del krunker?</h1>
+  <div id="step-1" class="step active">
+    <h1>¿Quieres extraer los datos del krunker?</h1>
 
-  <div id="button-container">
-    <button id="no-button">No</button>
-    <button id="yes-button">Si</button>
+    <div id="button-container">
+      <button id="no-button">No</button>
+      <button id="yes-button">Si</button>
+    </div>
+  </div>
+
+
+  <div id="step-2" class="step">
+    <h1>¿En que equipo jugaste?</h1>
+
+    <select name="team-selector" id="team-selector">
+      <option value="Linkchar">Linkchar</option>
+      <option value="Hilarios">Hilarios</option>
+    </select>
+
+    <button id="step-2-button" class="button-purple">Continuar</button>
+  </div>
+
+
+  <div id="step-3" class="step">
+    <h1>
+      Jugaste en el equipo:<br><span id="team-selected"></span>
+    </h1>
+
+    <button id="step-3-button" class="button-purple">Extraer datos</button>
+  </div>
+
+  <div id="step-4-success" class="step">
+    <h1>
+      Datos copiados en el portapapeles
+      <br>
+      ✅
+    </h1>
+  </div>
+
+  <div id="step-4-error" class="step">
+    <h1>
+      Hubo un error al copiar los datos
+      <br>
+      ❌
+    </h1>
+  </div>
+
+
+  <div id="steps">
+    <button class="step-indicator active"></button>
+    <button class="step-indicator"></button>
+    <button class="step-indicator"></button>
+
+    <!-- <button class="step">1</button> -->
+    <!-- <button class="step">2</button> -->
+    <!-- <button class="step">3</button> -->
   </div>
 
   <script src="popup.js"></script>

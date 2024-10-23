@@ -7,50 +7,49 @@
    <title>Document</title>
 </head>
 <body>
-   <table id="endTable">
-     <tbody>
-        <tr>
-           <th id="endlb_rank">#</th>
-           <th id="endlb_name">Name</th>
-           <th id="endlb_score">Score</th>
-           <th id="endlb_kills">Kills</th>
-           <th id="endlb_deaths">Deaths</th>
-           <th id="endlb_caps">Caps</th>
-           <th id="endlb_reward">Reward</th>
-           <th></th>
-        </tr>
-        <tr height="20px;"></tr>
-        <tr style="">
-           <td style="color:#fff">1.</td>
-           <td style="position: relative;">
-              <div class="endTableFlag flag-icon flag-icon-ar"></div>
-              <img class="endTablePfp" onerror="this.onerror=null;this.src=&quot;./img/player_pfp.png&quot;;" src="./img/player_pfp.png"><a class="endTableN" href="./social.html?p=profile&amp;q=aslar" target="_blank" style="color:#eb5656">aslar<span style="color:#fff"> [LCSD]</span></a>
-           </td>
-           <td style="position: relative;">585</td>
-           <td style="position: relative;">1</td>
-           <td style="position: relative;">0</td>
-           <td style="position: relative;">2</td>
-           <td style="position: relative;">NONE</td>
-           <td style="width: 1px;white-space: nowrap;padding-right: 0px;padding-left: 0px;">
-              <div class="material-icons reportBut" title="Report Player" onclick="reportPlayer(`aslar`,this)">report</div>
-           </td>
-        </tr>
-        <tr style="border-bottom:none">
-           <td style="color:#fff">2.</td>
-           <td style="position: relative;">
-              <div class="endTableFlag flag-icon flag-icon-ar"></div>
-              <img class="endTablePfp" onerror="this.onerror=null;this.src=&quot;./img/player_pfp.png&quot;;" src="./img/player_pfp.png"><a class="endTableN" href="./social.html?p=profile&amp;q=Lukway" target="_blank" style="color:#fff">Lukway<span style="color:#fff"> [LCSD]</span></a>
-           </td>
-           <td style="position: relative;">20</td>
-           <td style="position: relative;">0</td>
-           <td style="position: relative;">1</td>
-           <td style="position: relative;">0</td>
-           <td style="position: relative;">NONE</td>
-           <td style="width: 1px;white-space: nowrap;padding-right: 0px;padding-left: 0px;"></td>
-        </tr>
-     </tbody>
-   </table>
+   <div id="endUI" style="background-color: transparent;">
+      <div id="endChals"></div>
+      <div id="victorySubHolder">
+      <img id="victorySub" src="./img/vic.png" style="">
+      </div>
+      <div id="endInfo" style="display: block;">
+      <div style="margin-top:30px"></div>
+      <div id="teamTotal0" class="teamTotals" style="margin-right: 15px; display: inline-block;"><span class="teamTotalN0">Alpha</span><span class="teamTotalScore">0</span></div>
+      <div id="endTimer">Siguiente ronda en 00:10</div>
+      <div id="teamTotal1" class="teamTotals" style="margin-left: 15px; display: inline-block;"><span class="teamTotalScore">3</span><span class="teamTotalN1">Bravo</span><div class="material-icons teamWin1">emoji_events</div></div>
+      </div>
+      <div id="endMidHolder" style="display: inline-block; max-height: calc(100% - 490px); top: 310px;">
+      <div class="endAHolder" id="endAHolderL" style="opacity: 1; margin-right: 10px; display: inline-block;">
+      <div id="endAMerger">
+      <div id="endAContainer">
+      <div>
+      <div align="center" id="/21823819281/frvr-krunker_io-krunker-display-banner-krunkerio_300x250_3"></div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div id="endTabbedView"><div class="endCard"><div id="tabHolder"><div class="tabHeader selected" onmouseenter="playTick()" onclick="GUI.endScreen.changeTab('leaderboard')">Leaderboard</div><div class="tabHeader " onmouseenter="playTick()" onclick="GUI.endScreen.changeTab('performance')">Performance</div><div class="tabHeader " onmouseenter="playTick()" onclick="GUI.endScreen.changeTab('medals')">Medals</div><div class="tabHeader " onmouseenter="playTick()" onclick="GUI.endScreen.changeTab('rewards')">Rewards</div></div>
+                     <div class="tabBody" style="max-height:545px"><table id="endTable"><tbody><tr><th id="endlb_rank">#</th><th id="endlb_name">Name</th><th id="endlb_score">Score</th><th id="endlb_kills">Kills</th><th id="endlb_deaths">Deaths</th><th id="endlb_caps">Caps</th><th id="endlb_reward">Reward</th><th></th></tr><tr height="20px;"></tr><tr style=""><td style="color:#fff">1.</td><td style="position: relative;"><div class="endTableFlag flag-icon flag-icon-ar"></div><img class="endTablePfp" onerror="this.onerror=null;this.src=&quot;./img/player_pfp.png&quot;;" src="./img/player_pfp.png"><a class="endTableN" href="./social.html?p=profile&amp;q=Lukway" target="_blank" style="color:#fff">Lukway<span style="color:#fff"> [LCSD]</span></a></td><td style="position: relative;">935</td><td style="position: relative;">2</td><td style="position: relative;">1</td><td style="position: relative;">3</td><td style="position: relative;"><span style="color:#F8C55C">+9</span> KR</td><td style="width: 1px;white-space: nowrap;padding-right: 0px;padding-left: 0px;"><div class="material-icons reportBut shareBut" title="Share Match Results" onclick="shareResult()">share</div></td></tr><tr style=""><td style="color:#fff">2.</td><td style="position: relative;"><img class="endTablePfp" onerror="this.onerror=null;this.src=&quot;./img/player_pfp.png&quot;;" src="./img/player_pfp.png"><a class="endTableN" href="./social.html?p=profile&amp;q=Guest_3" target="_blank" style="color:rgba(255,255,255,0.6)">Guest_3</a></td><td style="position: relative;">25</td><td style="position: relative;">0</td><td style="position: relative;">4</td><td style="position: relative;">0</td><td style="position: relative;">NONE</td><td style="width: 1px;white-space: nowrap;padding-right: 0px;padding-left: 0px;"></td></tr><tr style="border-bottom:none"><td style="color:#fff">3.</td><td style="position: relative;"><img class="endTablePfp" onerror="this.onerror=null;this.src=&quot;./img/player_pfp.png&quot;;" src="./img/player_pfp.png"><a class="endTableN" href="./social.html?p=profile&amp;q=Blinkytkm" target="_blank" style="color:#eb5656">Blinkytkm</a></td><td style="position: relative;">545</td><td style="position: relative;">5</td><td style="position: relative;">2</td><td style="position: relative;">0</td><td style="position: relative;"><span style="color:#F8C55C">+5</span> KR</td><td style="width: 1px;white-space: nowrap;padding-right: 0px;padding-left: 0px;"><div class="material-icons reportBut" title="Report Player" onclick="reportPlayer(`Blinkytkm`,this)">report</div></td></tr></tbody></table></div></div></div>
+      <div class="endAHolder" id="endAHolderR" style="opacity: 1; display: inline-block;">
+      <div id="endAMerger">
+      <div id="endAContainer">
+      <div>
+      <div align="center" id="/21823819281/frvr-krunker_io-krunker-display-banner-krunkerio_300x250_2"></div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      <div></div>
+      <div id="matchVoteHolder" style="display: inline-block;"><label class="matchVote" style="" onclick="voteOnMatch(&quot;0,22&quot;)"><img src="https://assets.krunker.io/img/maps/map_22.png?build=52xhevJNgeGecufFFR9kAfbi6THg5Jk2" class="matchVoteThumb" draggable="false"><div class="matchVoteMap">Habitat</div><div class="matchVoteMode">FREE FOR ALL</div><div class="matchVoteTotal" id="voteT0,22" style="color: rgba(255, 255, 255, 0.7);">0</div></label><label class="matchVote" style="" onclick="voteOnMatch(&quot;0,28&quot;)"><img src="https://assets.krunker.io/img/maps/map_28.png?build=52xhevJNgeGecufFFR9kAfbi6THg5Jk2" class="matchVoteThumb" draggable="false"><div class="matchVoteMap">Clockwork</div><div class="matchVoteMode">FREE FOR ALL</div><div class="matchVoteTotal" id="voteT0,28" style="color: rgba(255, 255, 255, 0.7);">0</div></label><label class="matchVote" style="" onclick="voteOnMatch(&quot;27,1&quot;)"><img src="https://assets.krunker.io/img/maps/map_1.png?build=52xhevJNgeGecufFFR9kAfbi6THg5Jk2" class="matchVoteThumb" draggable="false"><div class="matchVoteMap">Littletown</div><div class="matchVoteMode">KRANKED FFA</div><div class="matchVoteTotal" id="voteT27,1" style="color: rgba(255, 255, 255, 0.7);">0</div></label><label class="matchVote" style="border: 4px solid #ffb600;box-shadow: 0 0 20px #ffb6009c;" onclick="voteOnMatch(&quot;13,26&quot;)"><img src="https://assets.krunker.io/img/maps/map_26.png?build=52xhevJNgeGecufFFR9kAfbi6THg5Jk2" class="matchVoteThumb" draggable="false"><div class="matchVoteMap">Stockade</div><div class="matchVoteMode">CLASSIC FFA</div><div class="matchVoteModifier" style="background:#ffac00">PARTY</div><div class="matchVoteTotal" id="voteT13,26" style="color: rgba(255, 255, 255, 0.7);">0</div></label></div>
+      </div>
+
+   <div></div>
+   <div id="matchVoteHolder" style="display: none;"></div>
+   </div>
 
    <script src="/extention.js"></script>
 </body>
 </html>
+
+

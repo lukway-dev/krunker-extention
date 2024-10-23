@@ -29,6 +29,7 @@ const getData = () => {
 
 // Función para deducir el equipo según el color
 const getTeamFromColor = (color) => {
+  console.log(color)
   switch (color) {
     case "rgb(235, 86, 86)":
       return "Red Team";
