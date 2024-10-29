@@ -95,9 +95,9 @@ stepThreeButton.addEventListener('click', () => {
             const enemyTeam = team === 'Linkchar' ? 'Hilarios' : 'Linkchar'
             switch (color) {
               case "rgb(235, 86, 86)":
-                return `${enemyTeam} Team`;
+                return enemyTeam;
               default:
-                return `${currentTeam} Team`;
+                return currentTeam;
             }
           }
 
@@ -125,22 +125,30 @@ stepThreeButton.addEventListener('click', () => {
             players.push(player);
           });
 
-          const winnerContainer = document.querySelector('.material-icons')?.parentNode
-          const winnerItem = winnerContainer.querySelector('.teamTotalN0, .teamTotalN1')
-          let winner
-          if(winnerItem) {
-            winner = winnerItem?.textContent
-          }
+          // const winnerContainer = document.querySelector('.material-icons')?.parentNode
+          // const winnerItem = winnerContainer.querySelector('.teamTotalN0, .teamTotalN1')
+          // let winner
+          // if(winnerItem) {
+          //   winner = winnerItem?.textContent
+          // }
           const linkcharScore = Number(document.querySelector('#teamTotal0 .teamTotalScore')?.textContent)
           const hilariosScore = Number(document.querySelector('#teamTotal1 .teamTotalScore')?.textContent)
           const linkcharIsWinner = linkcharScore > hilariosScore ? true : false
           const hilarisIsWinner = linkcharScore < hilariosScore ? true : false
           const isDraw = linkcharScore === hilariosScore ? true : false
           console.log(winner)
+          let winner = ''
+          if (linkcharIsWinner) {
+            winner = 'Linkchar'
+          } else if (hilarisIsWinner) {
+            winner = 'Hilarios'
+          } else if (isDraw) {
+            winner = 'Draw'
+          }
 
           // Datos generales
           const generalData = {
-            winner: winner ? winner : 'Draw',
+            winner,
             scoreTeam: {
               'Linkchar': linkcharScore,
               'Hilarios': hilariosScore
