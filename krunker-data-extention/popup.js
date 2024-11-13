@@ -10,6 +10,8 @@ const teamSelector = document.getElementById('team-selector')
 const teamSelected = document.getElementById('team-selected')
 const stepTwoButton = document.getElementById('step-2-button')
 const stepThreeButton = document.getElementById('step-3-button')
+const timeInput = document.getElementById('time')
+
 let currentStep = 1
 let selectedTeam = 'Linkchar'
 
@@ -87,7 +89,7 @@ stepThreeButton.addEventListener('click', () => {
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
     chrome.scripting.executeScript({
       target: { tabId: tabs[0].id },
-      function: (team) => {
+      function: (team, time) => {
         const extractTableData = (team) => {
           // Función para deducir el equipo según el color
           const getTeamFromColor = (color) => {
@@ -131,12 +133,12 @@ stepThreeButton.addEventListener('click', () => {
           // if(winnerItem) {
           //   winner = winnerItem?.textContent
           // }
+
           const linkcharScore = Number(document.querySelector('#teamTotal0 .teamTotalScore')?.textContent)
           const hilariosScore = Number(document.querySelector('#teamTotal1 .teamTotalScore')?.textContent)
           const linkcharIsWinner = linkcharScore > hilariosScore ? true : false
           const hilarisIsWinner = linkcharScore < hilariosScore ? true : false
           const isDraw = linkcharScore === hilariosScore ? true : false
-          console.log(winner)
           let winner = ''
           if (linkcharIsWinner) {
             winner = 'Linkchar'
@@ -145,9 +147,11 @@ stepThreeButton.addEventListener('click', () => {
           } else if (isDraw) {
             winner = 'Draw'
           }
+          // console.log(winner)
 
           // Datos generales
           const generalData = {
+            time,
             winner,
             scoreTeam: {
               'Linkchar': linkcharScore,
@@ -166,7 +170,7 @@ stepThreeButton.addEventListener('click', () => {
 
         return extractTableData(team);
       },
-      args: [selectedTeam],
+      args: [selectedTeam, timeInput.value],
     }, async (injectionResults) => {
       // injectionResults contiene los resultados de la función que se ejecutó en la página
       const data = injectionResults[0].result;
@@ -183,7 +187,7 @@ stepThreeButton.addEventListener('click', () => {
         // alert("Error al copiar los datos");
         copyStatus = 'error';
       }
-      console.log(copyStatus)
+      // console.log(copyStatus)
 
       goToNextStep({
         step: currentStep,
